@@ -39,13 +39,47 @@ public class AndroidPermissions extends Godot.SingletonBase {
         mDebug = debug;
     }
 
+    /* CALENDAR GROUP */
+    private static final int PERMISSION_REQUEST_READ_CALENDAR = 0;
+    private static final int PERMISSION_REQUEST_WRITE_CALENDAR = 1;
+    /* CAMERA GROUP */
+    private static final int PERMISSION_REQUEST_CAMERA = 2;
+    /* CONTACTS GROUP */
+    private static final int PERMISSION_REQUEST_READ_CONTACTS = 3;
+    private static final int PERMISSION_REQUEST_WRITE_CONTACTS = 4;
+    private static final int PERMISSION_REQUEST_GET_ACCOUNTS = 5;
+    /* LOCATION GROUP */
+    private static final int PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 6;
+    private static final int PERMISSION_REQUEST_ACCESS_COARSE_LOCATION = 7;
+    /* MICROPHONE GROUP */
+    private static final int PERMISSION_REQUEST_RECORD_AUDIO = 8;
+    /* PHONE GROUP */
+    private static final int PERMISSION_REQUEST_READ_PHONE_STATE = 9;
+    private static final int PERMISSION_REQUEST_CALL_PHONE = 10;
+    private static final int PERMISSION_REQUEST_READ_CALL_LOG = 11;
+    private static final int PERMISSION_REQUEST_WRITE_CALL_LOG = 12;
+    private static final int PERMISSION_REQUEST_ADD_VOICEMAIL = 13;
+    private static final int PERMISSION_REQUEST_USE_SIP = 14;
+    private static final int PERMISSION_REQUEST_PROCESS_OUTGOING_CALLS = 15;
+    /* SENSORS GROUP */
+    private static final int PERMISSION_REQUEST_BODY_SENSORS = 16;
+    /* SMS GROUP */
+    private static final int PERMISSION_REQUEST_SEND_SMS = 17;
+    private static final int PERMISSION_REQUEST_RECEIVE_SMS = 18;
+    private static final int PERMISSION_REQUEST_READ_SMS = 19;
+    private static final int PERMISSION_REQUEST_RECEIVE_WAP_PUSH = 20;
+    private static final int PERMISSION_REQUEST_RECEIVE_MMS = 21;
+    /* STORAGE GROUP */
+    private static final int PERMISSION_REQUEST_READ_EXTERNAL_STORAGE = 22;
+    private static final int PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE = 23;
+
     public void requestReadCalendarPermission() {
         int permissionCheck =
                 ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_CALENDAR);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_CALENDAR},
-                    1);
+                    PERMISSION_REQUEST_READ_CALENDAR);
         }
     }
 
@@ -55,7 +89,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.WRITE_CALENDAR},
-                    1);
+                    PERMISSION_REQUEST_WRITE_CALENDAR);
         }
     }
 
@@ -65,7 +99,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.CAMERA},
-                    1);
+                    PERMISSION_REQUEST_CAMERA);
         }
     }
 
@@ -75,7 +109,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_CONTACTS},
-                    1);
+                    PERMISSION_REQUEST_READ_CONTACTS);
         }
     }
 
@@ -85,7 +119,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.WRITE_CONTACTS},
-                    1);
+                    PERMISSION_REQUEST_WRITE_CONTACTS);
         }
     }
 
@@ -95,7 +129,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.GET_ACCOUNTS},
-                    1);
+                    PERMISSION_REQUEST_GET_ACCOUNTS);
         }
     }
 
@@ -105,7 +139,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    1);
+                    PERMISSION_REQUEST_ACCESS_FINE_LOCATION);
         }
     }
 
@@ -115,7 +149,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    1);
+                    PERMISSION_REQUEST_ACCESS_COARSE_LOCATION);
         }
     }
 
@@ -125,7 +159,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.RECORD_AUDIO},
-                    1);
+                    PERMISSION_REQUEST_RECORD_AUDIO);
         }
     }
 
@@ -135,7 +169,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_PHONE_STATE},
-                    1);
+                    PERMISSION_REQUEST_READ_PHONE_STATE);
         }
     }
 
@@ -145,7 +179,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.CALL_PHONE},
-                    1);
+                    PERMISSION_REQUEST_CALL_PHONE);
         }
     }
 
@@ -155,7 +189,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_CALL_LOG},
-                    1);
+                    PERMISSION_REQUEST_READ_CALL_LOG);
         }
     }
 
@@ -165,7 +199,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.WRITE_CALL_LOG},
-                    1);
+                    PERMISSION_REQUEST_WRITE_CALL_LOG);
         }
     }
 
@@ -175,7 +209,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.ADD_VOICEMAIL},
-                    1);
+                    PERMISSION_REQUEST_ADD_VOICEMAIL);
         }
     }
 
@@ -185,7 +219,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.USE_SIP},
-                    1);
+                    PERMISSION_REQUEST_USE_SIP);
         }
     }
 
@@ -195,7 +229,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.PROCESS_OUTGOING_CALLS},
-                    1);
+                    PERMISSION_REQUEST_PROCESS_OUTGOING_CALLS);
         }
     }
 
@@ -205,7 +239,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.BODY_SENSORS},
-                    1);
+                    PERMISSION_REQUEST_BODY_SENSORS);
         }
     }
 
@@ -215,7 +249,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.SEND_SMS},
-                    1);
+                    PERMISSION_REQUEST_SEND_SMS);
         }
     }
 
@@ -225,7 +259,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.RECEIVE_SMS},
-                    1);
+                    PERMISSION_REQUEST_RECEIVE_SMS);
         }
     }
 
@@ -235,7 +269,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_SMS},
-                    1);
+                    PERMISSION_REQUEST_READ_SMS);
         }
     }
 
@@ -245,7 +279,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.RECEIVE_WAP_PUSH},
-                    1);
+                    PERMISSION_REQUEST_RECEIVE_WAP_PUSH);
         }
     }
 
@@ -255,7 +289,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.RECEIVE_MMS},
-                    1);
+                    PERMISSION_REQUEST_RECEIVE_MMS);
         }
     }
 
@@ -265,7 +299,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    1);
+                    PERMISSION_REQUEST_READ_EXTERNAL_STORAGE);
         }
     }
 
@@ -275,7 +309,7 @@ public class AndroidPermissions extends Godot.SingletonBase {
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     mActivity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    1);
+                    PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
         }
     }
 
@@ -291,22 +325,8 @@ public class AndroidPermissions extends Godot.SingletonBase {
 
     protected void onMainRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         showDebugToast("onRequestPermissionsResult");
-        switch (requestCode) {
-            case 1: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay!
-
-                } else {
-
-                    // permission denied, boo!
-                }
-                return;
-            }
-
-            // more cases
-        }
+        boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+        GodotLib.calldeferred(mInstanceId, "_on_request_premission_result", new Object[]{requestCode, permissions, granted});
+        return;
     }
 }
