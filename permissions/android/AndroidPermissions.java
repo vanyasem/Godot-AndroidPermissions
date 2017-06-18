@@ -74,243 +74,110 @@ public class AndroidPermissions extends Godot.SingletonBase {
     private static final int PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE = 23;
 
     public void requestReadCalendarPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_CALENDAR);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_CALENDAR},
-                    PERMISSION_REQUEST_READ_CALENDAR);
-        }
+        requestPermission(Manifest.permission.READ_CALENDAR, PERMISSION_REQUEST_READ_CALENDAR);
     }
 
     public void requestWriteCalendarPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.WRITE_CALENDAR);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.WRITE_CALENDAR},
-                    PERMISSION_REQUEST_WRITE_CALENDAR);
-        }
+        requestPermission(Manifest.permission.WRITE_CALENDAR, PERMISSION_REQUEST_WRITE_CALENDAR);
     }
 
     public void requestCameraPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.CAMERA);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.CAMERA},
-                    PERMISSION_REQUEST_CAMERA);
-        }
+        requestPermission(Manifest.permission.CAMERA, PERMISSION_REQUEST_CAMERA);
     }
 
     public void requestReadContactsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_CONTACTS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_CONTACTS},
-                    PERMISSION_REQUEST_READ_CONTACTS);
-        }
+        requestPermission(Manifest.permission.READ_CONTACTS, PERMISSION_REQUEST_READ_CONTACTS);
     }
 
     public void requestWriteContactsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.WRITE_CONTACTS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.WRITE_CONTACTS},
-                    PERMISSION_REQUEST_WRITE_CONTACTS);
-        }
+        requestPermission(Manifest.permission.WRITE_CONTACTS, PERMISSION_REQUEST_WRITE_CONTACTS);
     }
 
     public void requestGetAccountsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.GET_ACCOUNTS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.GET_ACCOUNTS},
-                    PERMISSION_REQUEST_GET_ACCOUNTS);
-        }
+        requestPermission(Manifest.permission.GET_ACCOUNTS, PERMISSION_REQUEST_GET_ACCOUNTS);
     }
 
     public void requestAccessFineLocationPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.ACCESS_FINE_LOCATION);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    PERMISSION_REQUEST_ACCESS_FINE_LOCATION);
-        }
+        requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, PERMISSION_REQUEST_ACCESS_FINE_LOCATION);
     }
 
     public void requestAccessCoarseLocationPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.ACCESS_COARSE_LOCATION);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    PERMISSION_REQUEST_ACCESS_COARSE_LOCATION);
-        }
+        requestPermission(Manifest.permission.ACCESS_COARSE_LOCATION, PERMISSION_REQUEST_ACCESS_COARSE_LOCATION);
     }
 
     public void requestRecordAudioPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.RECORD_AUDIO);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.RECORD_AUDIO},
-                    PERMISSION_REQUEST_RECORD_AUDIO);
-        }
+        requestPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQUEST_RECORD_AUDIO);
     }
 
     public void requestReadPhoneStatePermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_PHONE_STATE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_PHONE_STATE},
-                    PERMISSION_REQUEST_READ_PHONE_STATE);
-        }
+        requestPermission(Manifest.permission.READ_PHONE_STATE, PERMISSION_REQUEST_READ_PHONE_STATE);
     }
 
     public void requestCallPhonePermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.CALL_PHONE},
-                    PERMISSION_REQUEST_CALL_PHONE);
-        }
+        requestPermission(Manifest.permission.CALL_PHONE, PERMISSION_REQUEST_CALL_PHONE);
     }
 
     public void requestReadCallLogPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_CALL_LOG);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_CALL_LOG},
-                    PERMISSION_REQUEST_READ_CALL_LOG);
-        }
+        requestPermission(Manifest.permission.READ_CALL_LOG, PERMISSION_REQUEST_READ_CALL_LOG);
     }
 
     public void requestWriteCallLogPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.WRITE_CALL_LOG);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.WRITE_CALL_LOG},
-                    PERMISSION_REQUEST_WRITE_CALL_LOG);
-        }
+        requestPermission(Manifest.permission.WRITE_CALL_LOG, PERMISSION_REQUEST_WRITE_CALL_LOG);
     }
 
     public void requestAddVoicemailPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.ADD_VOICEMAIL);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.ADD_VOICEMAIL},
-                    PERMISSION_REQUEST_ADD_VOICEMAIL);
-        }
+        requestPermission(Manifest.permission.ADD_VOICEMAIL, PERMISSION_REQUEST_ADD_VOICEMAIL);
     }
 
     public void requestUseSipPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.USE_SIP);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.USE_SIP},
-                    PERMISSION_REQUEST_USE_SIP);
-        }
+        requestPermission(Manifest.permission.USE_SIP, PERMISSION_REQUEST_USE_SIP);
     }
 
     public void requestProcessOutgoingCallsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.PROCESS_OUTGOING_CALLS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.PROCESS_OUTGOING_CALLS},
-                    PERMISSION_REQUEST_PROCESS_OUTGOING_CALLS);
-        }
+        requestPermission(Manifest.permission.PROCESS_OUTGOING_CALLS, PERMISSION_REQUEST_PROCESS_OUTGOING_CALLS);
     }
 
     public void requestBodySensorsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.BODY_SENSORS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.BODY_SENSORS},
-                    PERMISSION_REQUEST_BODY_SENSORS);
-        }
+        requestPermission(Manifest.permission.BODY_SENSORS, PERMISSION_REQUEST_BODY_SENSORS);
     }
 
     public void requestSendSmsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.SEND_SMS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.SEND_SMS},
-                    PERMISSION_REQUEST_SEND_SMS);
-        }
+        requestPermission(Manifest.permission.SEND_SMS, PERMISSION_REQUEST_SEND_SMS);
     }
 
     public void requestReceiveSmsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.RECEIVE_SMS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.RECEIVE_SMS},
-                    PERMISSION_REQUEST_RECEIVE_SMS);
-        }
+        requestPermission(Manifest.permission.RECEIVE_SMS, PERMISSION_REQUEST_RECEIVE_SMS);
     }
 
     public void requestReadSmsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_SMS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_SMS},
-                    PERMISSION_REQUEST_READ_SMS);
-        }
+        requestPermission(Manifest.permission.READ_SMS, PERMISSION_REQUEST_READ_SMS);
     }
 
     public void requestReceiveWapPushPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.RECEIVE_WAP_PUSH);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.RECEIVE_WAP_PUSH},
-                    PERMISSION_REQUEST_RECEIVE_WAP_PUSH);
-        }
+        requestPermission(Manifest.permission.RECEIVE_WAP_PUSH, PERMISSION_REQUEST_RECEIVE_WAP_PUSH);
     }
 
     public void requestReceiveMmsPermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.RECEIVE_MMS);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.RECEIVE_MMS},
-                    PERMISSION_REQUEST_RECEIVE_MMS);
-        }
+        requestPermission(Manifest.permission.RECEIVE_MMS, PERMISSION_REQUEST_RECEIVE_MMS);
     }
 
     public void requestReadExternalStoragePermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    PERMISSION_REQUEST_READ_EXTERNAL_STORAGE);
-        }
+        requestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, PERMISSION_REQUEST_READ_EXTERNAL_STORAGE);
     }
 
     public void requestWriteExternalStoragePermission() {
-        int permissionCheck =
-                ContextCompat.checkSelfPermission(mActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    mActivity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
+        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
+    }
+
+    private void requestPermission(String permission, int requestCode) {
+        if (!checkPermission(permission)) {
+            ActivityCompat.requestPermissions(mActivity, new String[]{permission}, requestCode);
         }
+    }
+
+    private boolean checkPermission(String permission) {
+        int permissionCheck = ContextCompat.checkSelfPermission(mActivity, permission);
+        return permissionCheck == PackageManager.PERMISSION_GRANTED;
     }
 
     private void showDebugToast(final String message) {
