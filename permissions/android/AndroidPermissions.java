@@ -275,14 +275,22 @@ public class AndroidPermissions extends Godot.SingletonBase {
 
 
     private void requestPermission(String permission, int requestCode) {
-        if (!checkPermission(permission)) {
+        showDebugToast(String.format("requestPermission: %s, requestCode=%d", permission, requestCode));
+        if (!checkPermission(permission, false)) {
             ActivityCompat.requestPermissions(mActivity, new String[]{permission}, requestCode);
         }
     }
 
-    private boolean checkPermission(String permission) {
+    private boolean checkPermission(String permission, boolean debug) {
         int permissionCheck = ContextCompat.checkSelfPermission(mActivity, permission);
-        return permissionCheck == PackageManager.PERMISSION_GRANTED;
+        boolean granted = permissionCheck == PackageManager.PERMISSION_GRANTED;
+        if(debug) {
+            showDebugToast(String.format("checkPermission: %s, granted=%s", permission, String.valueOf(granted)));
+        }
+        return granted;
+    }
+    private boolean checkPermission(String permission) {
+        return checkPermission(permission, true);
     }
 
     private void showDebugToast(final String message) {
@@ -296,9 +304,9 @@ public class AndroidPermissions extends Godot.SingletonBase {
     }
 
     protected void onMainRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        showDebugToast("onRequestPermissionsResult");
         boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-        GodotLib.calldeferred(mInstanceId, "_on_request_premission_result", new Object[]{requestCode, permissions, granted});
+        showDebugToast(String.format("onRequestPermissionsResult: %s, requestCode=%d, granted=%s", permissions[0], requestCode, String.valueOf(granted)));
+        GodotLib.calldeferred(mInstanceId, "_on_request_premission_result", new Object[]{requestCode, permissions[0], granted});
         return;
     }
 }
