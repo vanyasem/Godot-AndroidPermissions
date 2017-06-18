@@ -18,14 +18,25 @@ public class AndroidPermissions extends Godot.SingletonBase {
     public AndroidPermissions(Activity pActivity) {
         //register class name and functions to bind
         registerClass("AndroidPermissions", new String[] {
-                "init", "requestReadCalendarPermission", "requestWriteCalendarPermission", "requestCameraPermission",
+                "init",
+
+                "requestReadCalendarPermission", "requestWriteCalendarPermission", "requestCameraPermission",
                 "requestReadContactsPermission", "requestWriteContactsPermission", "requestGetAccountsPermission",
                 "requestAccessFineLocationPermission", "requestAccessCoarseLocationPermission", "requestRecordAudioPermission",
                 "requestReadPhoneStatePermission", "requestCallPhonePermission", "requestReadCallLogPermission",
                 "requestWriteCallLogPermission", "requestAddVoicemailPermission", "requestUseSipPermission",
                 "requestProcessOutgoingCallsPermission", "requestBodySensorsPermission", "requestSendSmsPermission",
                 "requestReceiveSmsPermission", "requestReadSmsPermission", "requestReceiveWapPushPermission",
-                "requestReceiveMmsPermission", "requestReadExternalStoragePermission", "requestWriteExternalStoragePermission"
+                "requestReceiveMmsPermission", "requestReadExternalStoragePermission", "requestWriteExternalStoragePermission",
+
+                "isReadCalendarPermissionGranted", "isWriteCalendarPermissionGranted", "isCameraPermissionGranted",
+                "isReadContactsPermissionGranted", "isWriteContactsPermissionGranted", "isGetAccountsPermissionGranted",
+                "isAccessFineLocationPermissionGranted", "isAccessCoarseLocationPermissionGranted", "isRecordAudioPermissionGranted",
+                "isReadPhoneStatePermissionGranted", "isCallPhonePermissionGranted", "isReadCallLogPermissionGranted",
+                "isWriteCallLogPermissionGranted", "isAddVoicemailPermissionGranted", "isUseSipPermissionGranted",
+                "isProcessOutgoingCallsPermissionGranted", "isBodySensorsPermissionGranted", "isSendSmsPermissionGranted",
+                "isReceiveSmsPermissionGranted", "isReadSmsPermissionGranted", "isReceiveWapPushPermissionGranted",
+                "isReceiveMmsPermissionGranted", "isReadExternalStoragePermissionGranted", "isWriteExternalStoragePermissionGranted"
         });
         mActivity = pActivity;
     }
@@ -168,6 +179,100 @@ public class AndroidPermissions extends Godot.SingletonBase {
     public void requestWriteExternalStoragePermission() {
         requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
     }
+
+
+    public boolean isWriteCalendarPermissionGranted() {
+        return checkPermission(Manifest.permission.WRITE_CALENDAR);
+    }
+
+    public boolean isCameraPermissionGranted() {
+        return checkPermission(Manifest.permission.CAMERA);
+    }
+
+    public boolean isReadContactsPermissionGranted() {
+        return checkPermission(Manifest.permission.READ_CONTACTS);
+    }
+
+    public boolean isWriteContactsPermissionGranted() {
+        return checkPermission(Manifest.permission.WRITE_CONTACTS);
+    }
+
+    public boolean isGetAccountsPermissionGranted() {
+        return checkPermission(Manifest.permission.GET_ACCOUNTS);
+    }
+
+    public boolean isAccessFineLocationPermissionGranted() {
+        return checkPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+    }
+
+    public boolean isAccessCoarseLocationPermissionGranted() {
+        return checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
+    }
+
+    public boolean isRecordAudioPermissionGranted() {
+        return checkPermission(Manifest.permission.RECORD_AUDIO);
+    }
+
+    public boolean isReadPhoneStatePermissionGranted() {
+        return checkPermission(Manifest.permission.READ_PHONE_STATE);
+    }
+
+    public boolean isCallPhonePermissionGranted() {
+        return checkPermission(Manifest.permission.CALL_PHONE);
+    }
+
+    public boolean isReadCallLogPermissionGranted() {
+        return checkPermission(Manifest.permission.READ_CALL_LOG);
+    }
+
+    public boolean isWriteCallLogPermissionGranted() {
+        return checkPermission(Manifest.permission.WRITE_CALL_LOG);
+    }
+
+    public boolean isAddVoicemailPermissionGranted() {
+        return checkPermission(Manifest.permission.ADD_VOICEMAIL);
+    }
+
+    public boolean isUseSipPermissionGranted() {
+        return checkPermission(Manifest.permission.USE_SIP);
+    }
+
+    public boolean isProcessOutgoingCallsPermissionGranted() {
+        return checkPermission(Manifest.permission.PROCESS_OUTGOING_CALLS);
+    }
+
+    public boolean isBodySensorsPermissionGranted() {
+        return checkPermission(Manifest.permission.BODY_SENSORS);
+    }
+
+    public boolean isSendSmsPermissionGranted() {
+        return checkPermission(Manifest.permission.SEND_SMS);
+    }
+
+    public boolean isReceiveSmsPermissionGranted() {
+        return checkPermission(Manifest.permission.RECEIVE_SMS);
+    }
+
+    public boolean isReadSmsPermissionGranted() {
+        return checkPermission(Manifest.permission.READ_SMS);
+    }
+
+    public boolean isReceiveWapPushPermissionGranted() {
+        return checkPermission(Manifest.permission.RECEIVE_WAP_PUSH);
+    }
+
+    public boolean isReceiveMmsPermissionGranted() {
+        return checkPermission(Manifest.permission.RECEIVE_MMS);
+    }
+
+    public boolean isReadExternalStoragePermissionGranted() {
+        return checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+    }
+
+    public boolean isWriteExternalStoragePermissionGranted() {
+        return checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
 
     private void requestPermission(String permission, int requestCode) {
         if (!checkPermission(permission)) {
