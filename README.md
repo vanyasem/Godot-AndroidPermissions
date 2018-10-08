@@ -1,3 +1,5 @@
+# The module was merged into upstream Godot: https://github.com/godotengine/godot/pull/22465
+
 # Godot-AndroidPermissions
 This is an Android module for [Godot Engine](https://github.com/okamstudio/godot).
 
